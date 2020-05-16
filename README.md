@@ -23,7 +23,8 @@ cookie如果过期，可以重新添加，具体步骤如下
 }
 
 
-catch3：（对我来说最有难度）
+catch3：
+========
 爬取某一关键词列表下面的全部网页内容，包括微博的用户id，发布日期（精确到日），微博内容，点赞数，评论数，转发数，写到指定的csv文件
 'https://weibo.cn/search/mblog?hideSearchFrame=&keyword=%s&advancedfilter=1&starttime=20190920&endtime=20191008&sort=hot' % (self.word_list[k])
 'https://weibo.cn/search/mblog?hideSearchFrame=&keyword=%s&advancedfilter=1&starttime=20190920&endtime=20191008&sort=hot&page=%d'%(words,pageNum)
@@ -38,15 +39,18 @@ d.start('.csv','.csv')，运行时前一个文件名是从catch1爬取的微博�
 运行本程序需要catch1处理的微博热词列表，与有效的cookie
 
 dataBase:
+================
 连接数据库服务器，创建一个新的数据库，然后命名为weibofile，重新连接数据库服务器，加上数据库weibofile，创建表weibo
 （可以把连接参数写成元组，就不需要二次连接，直接把weibofile加入元组）把csv文件读出来，做出元组，插入到weibo表中。
 把catch3处理的数据都插入到数据库中，好处是重复数据可以替换，不会报错（REPLACE INTO）
 运行本程序需要MYSQL workbench，还有catch3处理的data数据
 
 deal_data
+========
 本程序在pandas的运用上均属于基本操作，先通过sql语句从数据库中获取我们需要的数据（被sql加工过），然后通过pandas的分组操作，得到一些csv数据（自己没有使用）
 再通过matplotlib得出图表。本程序虽然简单，但涉及到许多关于细节内容需要注意，如dataframe如何显示全文，得到的图表如何避免中文乱码等等
 使用本程序需要有上一次
 
 Database_to_csv
+===============
 基本上是上一个程序的子程序，把数据库中的weibo表分别按评论数，点赞数，转发数排序提取出来，作为csv文件
