@@ -1,10 +1,10 @@
-本程序以使用etree，request，pymysql为主，构建爬虫程序，数据程序，数据处理程序三部分。
-简单分析与国庆70周年阅兵相关的微博热点事件与热点人物。
-整个程序包括两个爬虫程序，catch1，catch3，一个连接数据库程序dataBase，一个数据处理程序deal_data，一个输出csv程序Database_to_csv，
-运行次序：
-catch1-----catch3------dataBase-----data_data------Data_to_csv
+本程序以使用etree，request，pymysql为主，构建爬虫程序，数据程序，数据处理程序三部分。<br>
+简单分析与国庆70周年阅兵相关的微博热点事件与热点人物。 <br> 
+整个程序包括两个爬虫程序，catch1，catch3，一个连接数据库程序dataBase，一个数据处理程序deal_data，一个输出csv程序Database_to_csv<br>
+运行次序：catch1-----catch3------dataBase-----data_data------Data_to_csv<br>
 
 catch1:
+======
 通过cookie访问微博网站：
 https://s.weibo.com/top/summary?cate=socialevent  
 该网站国庆期间报告国庆70周年专属内容（新时代），
